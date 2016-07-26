@@ -15,12 +15,15 @@
      Rob Watson ( rmawatson [at] hotmail )
 """
 
+import math
+import sys
+
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
-import platform,sys,os,re,math
+
 import Eaglepy
-import alignment_tool_rsc
-from outliner import OutlinerTree
+from examples.outliner import OutlinerTree
+
 
 class AlignmentToolDialog(QDialog):
     
@@ -340,9 +343,9 @@ class AlignmentToolDialog(QDialog):
         self.layout().setStretch(1,0)
         self.layout().setStretch(2,0)
         self.layout().setStretch(3,100)
-        print "L"
+        print("L")
         self.eaglegrid = Eaglepy.ULContext().grid()
-        print "L2"
+        print("L2")
         currentUnit  = self.eaglegrid.unit(Eaglepy.REFRESH_VALUE)
         currentValue = self.eaglegrid.distance(Eaglepy.REFRESH_VALUE)
         
@@ -368,7 +371,7 @@ class AlignmentToolDialog(QDialog):
     def updateSelection(self):
 
         self.selected  = [item for item in Eaglepy.selected() if isinstance(item,(Eaglepy.ULInstance,Eaglepy.ULElement,Eaglepy.ULContact))]
-        print "UPDATE,", self.selected
+        print("UPDATE,", self.selected)
         
     def markerActivated(self,value):
         if self.activateMarkerCheckBox.checkState() == Qt.Unchecked:

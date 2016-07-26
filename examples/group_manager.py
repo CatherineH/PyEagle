@@ -99,7 +99,7 @@ class GroupManagerDialog(QDialog):
 		
 		
 		self.hline = QFrame()
-		self.hline.setGeometry(QRect(320, 150, 118, 3));
+		self.hline.setGeometry(QRect(320, 150, 118, 3))
 		self.hline.setFrameShape(QFrame.HLine)
 		self.hline.setFrameShadow(QFrame.Sunken)
 		
@@ -112,17 +112,10 @@ class GroupManagerDialog(QDialog):
 	
 	
 	def createFromSelected(self):
-			
-		Eaglepy.
+		pass
 	
 	def loadItems(self):
-		
-		
-		
-		
-		
-		
-		return
+		pass
 		
 	def centerToWidget(self,target=None):
 
@@ -132,7 +125,7 @@ class GroupManagerDialog(QDialog):
 			rect = target.geometry()   
 		
 		center = rect.center()
-		self.move(center.x() - self.width()  * 0.5, center.y() - self.height() * 0.5);
+		self.move(center.x() - self.width()  * 0.5, center.y() - self.height() * 0.5)
       
 
 

@@ -15,12 +15,13 @@
      Rob Watson ( rmawatson [at] hotmail )
 """
 
+import re
+
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
-import platform,sys,os,re,math
-from math import *
-import outliner_rsc
+
 import Eaglepy
+
 
 class OutlinerTree(QTreeWidget):
 
@@ -346,7 +347,7 @@ class OutlinerTree(QTreeWidget):
         
         self.blockSignals(False)
         
-        print "ADD",addGroupNames
+        print("ADD", addGroupNames)
         Eaglepy.setgroup(addGroupNames)
         Eaglepy.refreshview()
         
@@ -426,10 +427,10 @@ class OutlinerTree(QTreeWidget):
             objectWidgetItem = self.topLevelItem(offsetIndex)
             itemStatus[str(objectWidgetItem.text(0))] = objectWidgetItem.isSelected()
              
-            self.takeTopLevelItem(offsetIndex);
+            self.takeTopLevelItem(offsetIndex)
         
         for item in (item for item in self.allObjects if hasattr(item,"name")):
-            print item
+            print(item)
             newItem = self.createItemWidget(item)
             self.insertTopLevelItem(self.topLevelItemCount(),newItem)
             if itemStatus.has_key(str(newItem.text(0))):
@@ -477,7 +478,7 @@ class OutlinerDialog(QDialog):
             rect = target.geometry()
 
         center = rect.center()
-        self.move(center.x() - self.width()  * 0.5, center.y() - self.height() * 0.5);
+        self.move(center.x() - self.width()  * 0.5, center.y() - self.height() * 0.5)
 
 
 

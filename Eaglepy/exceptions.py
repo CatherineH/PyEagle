@@ -1,0 +1,1 @@
+class EaglepyException(Exception): pass
